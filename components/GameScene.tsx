@@ -5,7 +5,9 @@ import Option from "./Option";
 export default function GameScene() {
   return (
     <div className="w-96 h-[70vh] bg-white p-8 rounded-3xl shadow-2xl">
-      <div className="text-3xl font-semibold">O QUE VOCÊ OUVE?</div>
+      <div className="text-2xl font-semibold text-zinc-700">
+        O QUE VOCÊ OUVE?
+      </div>
       <div className="grid pt-16 pb-8 cursor-pointer shad place-content-center">
         <BsFillPlayCircleFill size={80} color="#e11d48" />
       </div>
