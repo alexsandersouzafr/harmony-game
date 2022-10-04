@@ -8,13 +8,15 @@ datasource db {
 }
 
 model Player {
-  level     Int
-  levelId   Int @id
+  player    Int   @id
+  level     Level @relation(fields: [levelId], references: [id])
+  levelId   Int
   lastLevel Int
 }
 
 model Level {
-  levelId   Int    @id @default(autoincrement())
+  id        Int      @id @default(autoincrement())
+  chapter   Chapter  @relation(fields: [chapterId], references: [id])
   chapterId Int
   type      String
   name      String
@@ -25,9 +27,11 @@ model Level {
   option1   String
   option2   String
   option3   String
+  Player    Player[]
 }
 
 model Chapter {
-  chapterId   Int    @id @default(autoincrement())
+  id          Int     @id @default(autoincrement())
   description String
+  Level       Level[]
 }
