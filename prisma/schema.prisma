@@ -22,7 +22,7 @@ model Level {
   name      String
   text      String
   sound     String
-  answer    String
+  answer    Int
   correct   String
   option1   String
   option2   String
@@ -32,6 +32,7 @@ model Level {
 
 model Chapter {
   id          Int     @id @default(autoincrement())
+  name        String
   description String
   Level       Level[]
 }

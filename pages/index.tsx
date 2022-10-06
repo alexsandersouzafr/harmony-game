@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
-import GameScene from "../components/GameScene";
-import Layout from "../components/Layout";
+import GameScene from "../packages/components/GameScene";
+import Layout from "../packages/components/Layout";
 
 const Home: NextPage = () => {
   return (
