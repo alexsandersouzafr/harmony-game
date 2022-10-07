@@ -3,19 +3,19 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider = "sqlite"
+  url      = "file:./dev.db"
 }
 
 model Player {
-  player    Int   @id
+  player    Int   @id @default(autoincrement())
   level     Level @relation(fields: [levelId], references: [id])
   levelId   Int
   lastLevel Int
 }
 
 model Level {
-  id        Int      @id @default(autoincrement())
+  id        Int      @id @unique @default(autoincrement())
   chapter   Chapter  @relation(fields: [chapterId], references: [id])
   chapterId Int
   type      String
