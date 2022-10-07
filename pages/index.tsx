@@ -22,7 +22,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
   const level = await prisma.level.findUnique({
     where: {
-      id: 1,
+      id: 2,
     },
   });
 
